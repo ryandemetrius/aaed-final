@@ -23,7 +23,7 @@ Esse código é utilizado como base no artigo escrito para o Trabalho Final da D
 
     ``numpy``
 
-    ``snap (Stanford Network Analysis Platform)``
+    ``snap-stanford (Stanford Network Analysis Platform)``
 
     ``heapq``
 
