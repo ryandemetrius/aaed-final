@@ -1,0 +1,4 @@
+snap-stanford
+matplotlib
+networkx
+numpy
