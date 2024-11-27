@@ -31,7 +31,7 @@ Esse código é utilizado como base no artigo escrito para o Trabalho Final da D
 Esse projeto contém basicamente dois arquivos:
 | Nome do arquivo               | Função                                                |
 | ----------------- | ---------------------------------------------------------------- |
-| Main.py       | O código de fato. |
+| main.py       | O código de fato. |
 | requirements.txt       | Pacotes necessários para executar o código. |
 
 Os pacotes podem ser instalados com o comando ``pip install -r requirements.txt`` dentro da pasta do projeto.
