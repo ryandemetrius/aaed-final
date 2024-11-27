@@ -22,7 +22,7 @@ if not os.path.isfile(compressed_filename):
 if not os.path.isfile(uncompressed_filename):
     print('Descompactando o dataset...')
     import gzip
-    # Abri o arquivo compactado (.gz) e salva o conteúdo em um novo arquivo (.txt)
+    # Abre o arquivo compactado (.gz) e salva o conteúdo em um novo arquivo (.txt)
     with gzip.open(compressed_filename, 'rb') as f_in:
         with open(uncompressed_filename, 'wb') as f_out:
             f_out.write(f_in.read())
@@ -116,7 +116,7 @@ print("Dijkstra otimizado e Bellman-Ford produzem os mesmos resultados:", same_r
 nodes_subset = list(G_nx.nodes())[:100]  # Selecionar os primeiros 100 nós
 subgraph = G_nx.subgraph(nodes_subset)
 
-# Plotar o subgrafo
+# Plota o subgrafo
 plt.figure(figsize=(12, 8))
 nx.draw_networkx(
     subgraph,
@@ -128,7 +128,7 @@ nx.draw_networkx(
 plt.title('Visualização de um Subgrafo do Grafo Facebook')
 plt.show()
 
-# Plotar a distribuição do grau dos nós
+# Plota a distribuição do grau dos nós
 degrees = [val for (node, val) in G_nx.degree()]  # Obter o grau de cada nó
 plt.figure(figsize=(10, 6))
 plt.hist(degrees, bins=range(max(degrees) + 1), edgecolor='black', log=True)
@@ -137,7 +137,7 @@ plt.xlabel('Grau')
 plt.ylabel('Frequência (escala logarítmica)')
 plt.show()
 
-# Plotar a distribuição dos comprimentos dos caminhos mais curtos
+# Plota a distribuição dos comprimentos dos caminhos mais curtos
 path_lengths = list(distances_dijkstra_optimized.values())
 plt.figure(figsize=(10, 6))
 plt.hist(
@@ -169,7 +169,7 @@ for i, v in enumerate(times):
     plt.text(i, v + 0.05, f"{v:.2f}s", ha='center', fontweight='bold')
 plt.show()
 
-# Plotar a distribuição da centralidade de intermediação dos nós (betweenness centrality)
+# Plota a distribuição da centralidade de intermediação dos nós (betweenness centrality)
 centrality = nx.betweenness_centrality(G_nx)
 plt.figure(figsize=(10, 6))
 plt.hist(list(centrality.values()), bins=50, edgecolor='black', log=True)
@@ -178,7 +178,7 @@ plt.xlabel('Centralidade de Intermediação')
 plt.ylabel('Frequência (escala logarítmica)')
 plt.show()
 
-# Plotar a distribuição dos coeficientes de agrupamento dos nós
+# Plota a distribuição dos coeficientes de agrupamento dos nós
 degrees_clustering = nx.clustering(G_nx)
 plt.figure(figsize=(10, 6))
 plt.hist(list(degrees_clustering.values()), bins=50, edgecolor='black', log=True)
@@ -187,7 +187,7 @@ plt.xlabel('Coeficiente de Agrupamento')
 plt.ylabel('Frequência (escala logarítmica)')
 plt.show()
 
-# Plotar a distribuição dos tamanhos dos componentes conexos
+# Plota a distribuição dos tamanhos dos componentes conexos
 connected_components = [len(c) for c in sorted(nx.connected_components(G_nx), key=len, reverse=True)]
 plt.figure(figsize=(10, 6))
 plt.hist(connected_components, bins=50, edgecolor='black', log=True)
@@ -196,7 +196,7 @@ plt.xlabel('Tamanho do Componente Conexo')
 plt.ylabel('Frequência (escala logarítmica)')
 plt.show()
 
-# Plotar o mapa de calor da matriz de adjacência do grafo
+# Plota o mapa de calor da matriz de adjacência do grafo
 adj_matrix = nx.to_numpy_array(G_nx)
 plt.figure(figsize=(10, 8))
 plt.imshow(adj_matrix, cmap='hot', interpolation='nearest')
